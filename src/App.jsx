@@ -7,9 +7,12 @@ import ShopsPage from './pages/ShopsPage';
 import AddShopPage from './pages/AddShopPage';
 import Header from './components/layout/Header';
 
-function App() {
+export default function App() {
   return (
     <div>
+      <h1 className="text-white p-6 bg-red-300 text-4xl text-center">
+        Tailwind test
+      </h1>
       <Header />
       <Routes>
         <Route path="/" element={<HomePage />} />
@@ -21,5 +24,3 @@ function App() {
     </div>
   );
 }
-
-export default App;
