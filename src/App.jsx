@@ -1,4 +1,3 @@
-import './styles/App.css';
 import React from 'react';
 import { Route, Routes } from 'react-router-dom';
 import HomePage from './pages/HomePage';
@@ -6,10 +5,12 @@ import LoginPage from './pages/LoginPage';
 import RegisterPage from './pages/RegisterPage';
 import ShopsPage from './pages/ShopsPage';
 import AddShopPage from './pages/AddShopPage';
+import Header from './components/layout/Header';
 
 function App() {
   return (
     <div>
+      <Header />
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/login" element={<LoginPage />} />
