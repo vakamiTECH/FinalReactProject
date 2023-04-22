@@ -1,7 +1,7 @@
 import React from 'react';
 import { useFormik } from 'formik';
 
-function LoginForm({ onLogin }) {
+function RegisterForm({ onRegister }) {
   const formik = useFormik({
     initialValues: {
       email: '',
@@ -9,7 +9,7 @@ function LoginForm({ onLogin }) {
     },
     onSubmit: (values) => {
       console.log('Form values', values);
-      onLogin(values);
+      onRegister(values);
     },
   });
 
@@ -24,7 +24,7 @@ function LoginForm({ onLogin }) {
             Email
           </label>
           <input
-            placeholder="your email"
+            placeholder="create email"
             id="email"
             type="text"
             name="email"
@@ -45,7 +45,7 @@ function LoginForm({ onLogin }) {
             Password
           </label>
           <input
-            placeholder="your password"
+            placeholder="create password"
             id="password"
             type="password"
             name="password"
@@ -69,4 +69,4 @@ function LoginForm({ onLogin }) {
   );
 }
 
-export default LoginForm;
+export default RegisterForm;

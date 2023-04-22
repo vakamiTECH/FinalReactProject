@@ -16,7 +16,7 @@ function HomePage() {
         project, whether you are into retro cars, race cars, rusted one, crashed
         cars and even motorcycles. Most important is it should{' '}
         <span className="text-2xl font-big-shoulders-stencil-display">
-          not be Finished!
+          be not Finished!
         </span>{' '}
         Our platform connects you with a wide range of{' '}
         <span className="text-2xl font-big-shoulders-stencil-display">

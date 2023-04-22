@@ -5,7 +5,7 @@ function Header() {
   const isLoggenIn = false;
   return (
     <header className="bg-primary">
-      <div className="container mx-auto flex items-center justify-between py-4 text-primary font-big-shoulders-stencil-display text-4xl">
+      <div className="container mx-auto flex items-center justify-between py-4 text-primary font-big-shoulders-stencil-display text-3xl">
         <div className="w-1/4 space-x-4">
           <Link to={'/'} className="font-bold">
             Logo
