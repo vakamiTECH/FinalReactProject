@@ -1,8 +1,9 @@
 import React from 'react';
 import { NavLink, Link } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 
 function Header() {
-  const isLoggenIn = false;
+  const isLoggenIn = useSelector((state) => state.auth.isLoggenIn);
   return (
     <header className="bg-primary">
       <div className="container mx-auto flex items-center justify-between py-4 text-primary font-big-shoulders-stencil-display text-3xl">
