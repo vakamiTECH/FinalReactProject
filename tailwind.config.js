@@ -9,7 +9,7 @@ export default {
       md: '547px',
       // => @media (min-width: 768px) { ... }
 
-      lg: '1768px',
+      lg: '768px',
       // => @media (min-width: 1024px) { ... }
 
       xl: '1024px',
@@ -18,7 +18,24 @@ export default {
       '2xl': '1680px',
       // => @media (min-width: 1536px) { ... }
     },
-    extend: {},
+    extend: {
+      backgroundColor: {
+        primary: '#E5E5E5',
+        secondary: '#F3F6F5',
+        tertiary: '#F0F0F0',
+      },
+      textColor: {
+        primary: '#07484A',
+        secondary: '#70908B',
+        tertiary: '#FDFBF8',
+      },
+      fontFamily: {
+        'big-shoulders-stencil-display': [
+          'Big Shoulders Stencil Display',
+          'cursive',
+        ],
+      },
+    },
   },
   plugins: [],
 };

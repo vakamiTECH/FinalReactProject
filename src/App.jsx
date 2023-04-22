@@ -10,9 +10,6 @@ import Header from './components/layout/Header';
 export default function App() {
   return (
     <div>
-      <h1 className="text-white p-6 bg-red-300 text-4xl text-center">
-        Tailwind test
-      </h1>
       <Header />
       <Routes>
         <Route path="/" element={<HomePage />} />
