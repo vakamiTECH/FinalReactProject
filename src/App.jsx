@@ -9,7 +9,7 @@ import Header from './components/layout/Header';
 
 export default function App() {
   return (
-    <div>
+    <div className="h-screen w-screen bg-secondary">
       <Header />
       <Routes>
         <Route path="/" element={<HomePage />} />

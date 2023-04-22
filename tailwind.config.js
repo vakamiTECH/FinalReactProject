@@ -23,6 +23,8 @@ export default {
         primary: '#E5E5E5',
         secondary: '#F3F6F5',
         tertiary: '#F0F0F0',
+        lightGreen: '#70908B',
+        darkGreen: '#07484A',
       },
       textColor: {
         primary: '#07484A',
@@ -34,6 +36,7 @@ export default {
           'Big Shoulders Stencil Display',
           'cursive',
         ],
+        'big-shoulders-display': ['Big Shoulders Display', 'cursive'],
       },
     },
   },

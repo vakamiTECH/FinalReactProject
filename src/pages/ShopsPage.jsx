@@ -1,12 +1,7 @@
 import React from 'react';
 
 function ShopsPage() {
-  return (
-    <div>
-      <h1>ShopsPage</h1>
-      <p>This is ShopsPage</p>
-    </div>
-  );
+  return <div></div>;
 }
 
 export default ShopsPage;
