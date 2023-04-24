@@ -25,6 +25,9 @@ export default {
         tertiary: '#F0F0F0',
         lightGreen: '#70908B',
         darkGreen: '#07484A',
+        success: '#CAF3E5',
+        error: '#F9D9DA',
+        info: '#FFF4E7',
       },
       textColor: {
         primary: '#07484A',

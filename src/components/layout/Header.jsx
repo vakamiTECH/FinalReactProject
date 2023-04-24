@@ -3,51 +3,67 @@ import { NavLink, Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 
 function Header() {
-  const isLoggenIn = useSelector((state) => state.auth.isLoggenIn);
+  const isLoggedIn = useSelector((state) => state.auth.isLoggedIn);
+
+  function logout() {}
+
   return (
     <header className="bg-primary">
       <div className="container mx-auto flex items-center justify-between py-4 text-primary font-big-shoulders-stencil-display text-3xl">
-        <div className="w-1/4 space-x-4">
+        <div className="w-2/4 space-x-4">
           <Link to={'/'} className="font-bold">
             Logo
           </Link>
           <NavLink
+            className="navItem font-bold hover:text-secondary hover:transition duration-500 ease-in-out"
             to={'/'}
-            className="font-bold hover:text-secondary hover:transition duration-500 ease-in-out"
           >
             Home
           </NavLink>
         </div>
-        <div className="w-3/4 flex justify-end">
+        <div className="text-center">
+          <h1 className="font-bold text-5xl text-primary">
+            UNFINISHED#CARS#MARKET
+          </h1>
+        </div>
+        <div className="w-2/4 flex justify-end">
           <nav className="space-x-4">
-            {isLoggenIn && (
+            {!isLoggedIn && (
               <NavLink
+                className="navItem font-bold  hover:text-secondary hover:transition duration-500 ease-in-out"
                 to={'/shops'}
-                className="font-bold  hover:text-secondary hover:transition duration-500 ease-in-out"
               >
                 Projects for sale
               </NavLink>
             )}
-            {isLoggenIn && (
+            {!isLoggedIn && (
               <NavLink
-                to={'/shops/add/'}
-                className="font-bold  hover:text-secondary hover:transition duration-500 ease-in-out"
+                className="navItem font-bold  hover:text-secondary hover:transition duration-500 ease-in-out"
+                to={'/shops/add'}
               >
                 Sell here
               </NavLink>
             )}
-            {!isLoggenIn && (
+            {!isLoggedIn && (
               <NavLink
+                className="navItem font-bold  hover:text-secondary hover:transition duration-500 ease-in-out"
                 to={'/login'}
-                className="font-bold  hover:text-secondary hover:transition duration-500 ease-in-out"
+              >
+                <button>Logout</button>
+              </NavLink>
+            )}
+            {isLoggedIn && (
+              <NavLink
+                className="navItem font-bold  hover:text-secondary hover:transition duration-500 ease-in-out"
+                to={'/login'}
               >
                 Login
               </NavLink>
             )}
-            {!isLoggenIn && (
+            {isLoggedIn && (
               <NavLink
+                className="navItem font-bold  hover:text-secondary hover:transition duration-500 ease-in-out"
                 to={'/register'}
-                className="font-bold  hover:text-secondary hover:transition duration-500 ease-in-out"
               >
                 Register
               </NavLink>

@@ -6,11 +6,13 @@ import RegisterPage from './pages/RegisterPage';
 import ShopsPage from './pages/ShopsPage';
 import AddShopPage from './pages/AddShopPage';
 import Header from './components/layout/Header';
+import Feedback from './firebase/ui/feedback/Feedback';
 
-export default function App() {
+function App() {
   return (
     <div className="h-screen w-screen bg-secondary">
       <Header />
+      <Feedback />
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/login" element={<LoginPage />} />
@@ -21,3 +23,5 @@ export default function App() {
     </div>
   );
 }
+
+export default App;

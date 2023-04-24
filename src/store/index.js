@@ -25,11 +25,20 @@ const authSlice = createSlice({
       );
     },
     register(state, action) {
-      state.user = action.payload;
+      console.log('register happened');
+      state.userEmail = action.payload.email;
+      state.userUid = action.payload.uid;
       state.isLoggedIn = true;
+      localStorage.setItem(
+        localUserKey,
+        JSON.stringify({ email: state.userEmail, uid: state.userUid }),
+      );
     },
     logout(state) {
-      state = initAuthState;
+      (state.userEmail = null),
+        (state.userUid = null),
+        (state.isLoggedIn = false),
+        localStorage.removeItem(localUserKey);
     },
   },
 });
@@ -40,6 +49,12 @@ const initUiState = {
   show: false,
   isLoggedIn: false,
 };
+// initUiState = {
+//   msg: 'tikrinam ar veikia',
+//   type: 'success',
+//   show: true,
+//   isLoggedIn: false,
+// };
 
 const uiSlice = createSlice({
   name: 'ui',
@@ -49,6 +64,21 @@ const uiSlice = createSlice({
       (state.msg = action.payload.msg),
         (state.type = action.payload.type),
         (state.show = true);
+    },
+    showSuccess(state, action) {
+      state.show = true;
+      state.type = 'success';
+      state.msg = action.payload;
+    },
+    closeAlert(state) {
+      state.msg = '';
+      state.type = '';
+      state.show = false;
+    },
+    showLoading(state) {
+      state.show = true;
+      state.type = 'success';
+      state.msg = 'Loading...';
     },
   },
 });
