@@ -1,11 +1,10 @@
 import React from 'react';
 import { NavLink, Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
+import Logout from '../auth/Logout';
 
 function Header() {
   const isLoggedIn = useSelector((state) => state.auth.isLoggedIn);
-
-  function logout() {}
 
   return (
     <header className="bg-primary">
@@ -28,7 +27,7 @@ function Header() {
         </div>
         <div className="w-2/4 flex justify-end">
           <nav className="space-x-4">
-            {!isLoggedIn && (
+            {isLoggedIn && (
               <NavLink
                 className="navItem font-bold  hover:text-secondary hover:transition duration-500 ease-in-out"
                 to={'/shops'}
@@ -36,7 +35,7 @@ function Header() {
                 Projects for sale
               </NavLink>
             )}
-            {!isLoggedIn && (
+            {isLoggedIn && (
               <NavLink
                 className="navItem font-bold  hover:text-secondary hover:transition duration-500 ease-in-out"
                 to={'/shops/add'}
@@ -44,15 +43,15 @@ function Header() {
                 Sell here
               </NavLink>
             )}
-            {!isLoggedIn && (
+            {isLoggedIn && (
               <NavLink
                 className="navItem font-bold  hover:text-secondary hover:transition duration-500 ease-in-out"
                 to={'/login'}
               >
-                <button>Logout</button>
+                <Logout />
               </NavLink>
             )}
-            {isLoggedIn && (
+            {!isLoggedIn && (
               <NavLink
                 className="navItem font-bold  hover:text-secondary hover:transition duration-500 ease-in-out"
                 to={'/login'}
@@ -60,7 +59,7 @@ function Header() {
                 Login
               </NavLink>
             )}
-            {isLoggedIn && (
+            {!isLoggedIn && (
               <NavLink
                 className="navItem font-bold  hover:text-secondary hover:transition duration-500 ease-in-out"
                 to={'/register'}

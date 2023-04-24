@@ -4,11 +4,12 @@ import LoginForm from '../components/auth/LoginForm';
 import { auth } from '../firebase/firebase';
 import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-import { authActions } from '../store';
+import { authActions, uiActions } from '../store';
 
 function LoginPage() {
   const dispatch = useDispatch();
   function loginUser({ email, password }) {
+    dispatch(uiActions.showLoading());
     signInWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         const user = userCredential.user;
@@ -19,6 +20,7 @@ function LoginPage() {
             uid: user.uid,
           }),
         );
+        dispatch(uiActions.showSuccess('login successful'));
       })
       .catch((error) => {
         const errorCode = error.errorCode;

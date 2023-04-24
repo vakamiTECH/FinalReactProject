@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { uiActions } from '../../../store';
 
@@ -9,6 +9,18 @@ function Feedback() {
   const handleClose = () => {
     dispatch(uiActions.closeAlert());
   };
+
+  useEffect(() => {
+    let timeout;
+    if (show) {
+      timeout = setTimeout(() => {
+        dispatch(uiActions.closeAlert());
+      }, 2000);
+    }
+    return () => {
+      clearTimeout(timeout);
+    };
+  }, [show, dispatch]);
 
   let bgColor = '';
   let textColor = '';
