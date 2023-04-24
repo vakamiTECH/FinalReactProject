@@ -12,7 +12,7 @@ function Feedback() {
 
   useEffect(() => {
     let timeout;
-    if (show) {
+    if (show && msg !== 'something went wrong') {
       timeout = setTimeout(() => {
         dispatch(uiActions.closeAlert());
       }, 2000);
@@ -20,7 +20,7 @@ function Feedback() {
     return () => {
       clearTimeout(timeout);
     };
-  }, [show, dispatch]);
+  }, [show, msg, dispatch]);
 
   let bgColor = '';
   let textColor = '';

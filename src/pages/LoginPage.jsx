@@ -26,6 +26,7 @@ function LoginPage() {
         const errorCode = error.errorCode;
         const errorMessage = error.message;
         console.warn('login fail', errorMessage);
+        dispatch(uiActions.showError('something went wrong'));
       });
   }
   return (

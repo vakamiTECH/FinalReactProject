@@ -20,11 +20,11 @@ function Header() {
             Home
           </NavLink>
         </div>
-        <div className="text-center">
+        {/* <div className="text-center">
           <h1 className="font-bold text-5xl text-primary">
             UNFINISHED#CARS#MARKET
           </h1>
-        </div>
+        </div> */}
         <div className="w-2/4 flex justify-end">
           <nav className="space-x-4">
             {isLoggedIn && (
