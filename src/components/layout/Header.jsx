@@ -8,7 +8,7 @@ function Header() {
   const location = useLocation();
 
   return (
-    <header className="bg-primary">
+    <header className="bg-primary max-w-1200px mx-auto px-4 sm:px-6 lg:px-8">
       <div className="container mx-auto flex items-center justify-between py-4 text-primary font-big-shoulders-stencil-display text-3xl">
         <div className="w-2/4 space-x-4">
           <NavLink
