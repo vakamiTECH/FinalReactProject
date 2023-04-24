@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { useFormik } from 'formik';
 
 function LoginForm({ onLogin }) {
@@ -82,5 +83,8 @@ function LoginForm({ onLogin }) {
     </div>
   );
 }
+LoginForm.propTypes = {
+  onLogin: PropTypes.func.isRequired,
+};
 
 export default LoginForm;

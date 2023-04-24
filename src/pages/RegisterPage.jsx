@@ -1,24 +1,26 @@
 import React from 'react';
-import RegisterForm from '../components/auth/RegisterForm';
-import { Link } from 'react-router-dom';
+import { Link, Navigate } from 'react-router-dom';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
 import { auth } from '../firebase/firebase';
+import RegisterForm from '../components/auth/RegisterForm';
 
 function RegisterPage() {
+  const [isRegistered, setIsRegistered] = React.useState(false);
+
   function registerInFirebase({ email, password }) {
-    console.log('{ email, password } ===', { email, password });
     createUserWithEmailAndPassword(auth, email, password)
-      .then((userCredential) => {
-        // Signed in
-        const user = userCredential.user;
-        console.log('user ===', user);
+      .then(() => {
+        setIsRegistered(true);
       })
       .catch((error) => {
-        const errorCode = error.code;
-        const errorMessage = error.message;
-        console.warn(errorMessage);
+        console.warn(error.message);
       });
   }
+
+  if (isRegistered) {
+    return <Navigate to="/login" />;
+  }
+
   return (
     <div style={{ width: '30%', margin: '0 auto' }}>
       <RegisterForm onRegister={registerInFirebase} />

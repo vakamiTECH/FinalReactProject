@@ -21,10 +21,7 @@ function App() {
           path="/login"
           element={isLoggedIn ? <Navigate to={'/shops'} /> : <LoginPage />}
         />
-        <Route
-          path="/register"
-          element={isLoggedIn ? <Navigate to={'/shops'} /> : <RegisterPage />}
-        />
+        <Route path="/register" element={<RegisterPage />} />
         <Route path="/shops" element={<ShopsPage />} />
         <Route path="/shops/add/" element={<AddShopPage />} />
       </Routes>
