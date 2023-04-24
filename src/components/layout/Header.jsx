@@ -1,10 +1,11 @@
 import React from 'react';
-import { NavLink, Link } from 'react-router-dom';
+import { NavLink, Link, useLocation } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import Logout from '../auth/Logout';
 
 function Header() {
   const isLoggedIn = useSelector((state) => state.auth.isLoggedIn);
+  const location = useLocation();
 
   return (
     <header className="bg-primary">
@@ -14,38 +15,45 @@ function Header() {
             Logo
           </Link>
           <NavLink
-            className="navItem font-bold hover:text-secondary hover:transition duration-500 ease-in-out"
+            className={`navItem font-bold hover:text-secondary hover:transition duration-500 ease-in-out ${
+              location.pathname === '/'
+                ? 'bg-secondary pt-2 px-3 rounded-t-xl pb-4 text-secondary'
+                : ''
+            }`}
             to={'/'}
           >
-            Home
+            HOME
           </NavLink>
         </div>
-        {/* <div className="text-center">
-          <h1 className="font-bold text-5xl text-primary">
-            UNFINISHED#CARS#MARKET
-          </h1>
-        </div> */}
         <div className="w-2/4 flex justify-end">
           <nav className="space-x-4">
             {isLoggedIn && (
               <NavLink
-                className="navItem font-bold  hover:text-secondary hover:transition duration-500 ease-in-out"
+                className={`navItem font-bold hover:text-secondary hover:transition duration-500 ease-in-out ${
+                  location.pathname === '/shops'
+                    ? 'bg-secondary pt-2 px-3 rounded-t-xl pb-5  text-secondary'
+                    : ''
+                }`}
                 to={'/shops'}
               >
-                Projects for sale
+                PROJECTS 4SALE
               </NavLink>
             )}
             {isLoggedIn && (
               <NavLink
-                className="navItem font-bold  hover:text-secondary hover:transition duration-500 ease-in-out"
+                className={`navItem font-bold hover:text-secondary hover:transition duration-500 ease-in-out ${
+                  location.pathname === '/shops/add'
+                    ? 'bg-secondary pt-2 px-3 rounded-t-xl pb-5  text-secondary'
+                    : ''
+                }`}
                 to={'/shops/add'}
               >
-                Sell here
+                SELL HERE
               </NavLink>
             )}
             {isLoggedIn && (
               <NavLink
-                className="navItem font-bold  hover:text-secondary hover:transition duration-500 ease-in-out"
+                className="navItem font-bold hover:text-secondary hover:transition duration-500 ease-in-out"
                 to={'/login'}
               >
                 <Logout />
@@ -53,18 +61,26 @@ function Header() {
             )}
             {!isLoggedIn && (
               <NavLink
-                className="navItem font-bold  hover:text-secondary hover:transition duration-500 ease-in-out"
+                className={`navItem font-bold hover:text-secondary hover:transition duration-500 ease-in-out ${
+                  location.pathname === '/login'
+                    ? 'bg-secondary pt-2 px-3 rounded-t-xl pb-5  text-secondary'
+                    : ''
+                }`}
                 to={'/login'}
               >
-                Login
+                LOGIN
               </NavLink>
             )}
             {!isLoggedIn && (
               <NavLink
-                className="navItem font-bold  hover:text-secondary hover:transition duration-500 ease-in-out"
+                className={`navItem font-bold hover:text-secondary hover:transition duration-500 ease-in-out ${
+                  location.pathname === '/register'
+                    ? 'bg-secondary pt-2 px-3 rounded-t-xl pb-5  text-secondary'
+                    : ''
+                }`}
                 to={'/register'}
               >
-                Register
+                REGISTER
               </NavLink>
             )}
           </nav>

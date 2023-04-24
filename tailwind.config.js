@@ -33,6 +33,7 @@ export default {
         primary: '#07484A',
         secondary: '#70908B',
         tertiary: '#FDFBF8',
+        active: '#F9D9DA',
       },
       fontFamily: {
         'big-shoulders-stencil-display': [

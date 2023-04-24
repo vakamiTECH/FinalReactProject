@@ -16,7 +16,7 @@ function Logout() {
       })
       .catch((error) => {});
   }
-  return !isUser ? null : <button onClick={logoutFirebase}>Logout</button>;
+  return !isUser ? null : <button onClick={logoutFirebase}>LOGOUT</button>;
 }
 
 export default Logout;
