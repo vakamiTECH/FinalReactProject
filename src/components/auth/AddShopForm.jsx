@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { useFormik } from 'formik';
-
 function AddShopForm({ onSubmit }) {
   const formik = useFormik({
     initialValues: {

@@ -9,7 +9,7 @@ function HomePage() {
         alt="home page background"
         className="rounded-bl-3xl rounded-br-3xl grayscale opacity-20"
       />
-      <div className="container w-3/4 absolute flex top-2 left-52">
+      <div className="w-2/4 absolute flex top-2 left-36">
         <p className="text-primary font-big-shoulders-display text-xl font-bold tracking-wide leading-normal m-5">
           <span className="text-3xl font-big-shoulders-stencil-display mr-1">
             Unfinished Cars Market
